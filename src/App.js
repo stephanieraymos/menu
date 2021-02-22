@@ -3,18 +3,21 @@ import Menu from "./Menu";
 import Categories from "./Categories";
 import items from "./data";
 
+const allCategories = items.map((item) => item.category);
+console.log(allCategories);
+
 function App() {
   const [menuItems, setMenuItems] = useState(items);
   const [categories, setCategories] = useState([]);
 
   const filterItems = (category) => {
-    if(category === 'all'){
-      setMenuItems(items)
+    if (category === "all") {
+      setMenuItems(items);
       return;
     }
-    
-    const newItems = items.filter((item) => item.category === category)
-    setMenuItems(newItems)
+
+    const newItems = items.filter((item) => item.category === category);
+    setMenuItems(newItems);
   };
 
   document.title = "Menu";
@@ -25,8 +28,8 @@ function App() {
           <h2>Menu</h2>
           <div className="underline"></div>
         </div>
-        <Categories filterItems={filterItems}/>
-        <Menu items={menuItems}/>
+        <Categories filterItems={filterItems} />
+        <Menu items={menuItems} />
       </section>
     </main>
   );
