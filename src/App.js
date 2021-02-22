@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Menu from "./Menu";
-import Categories from "./Catergories";
+import Categories from "./Categories";
 import items from "./data";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
           <div className="underline"></div>
         </div>
         <Categories />
-        <Menu />
+        <Menu items={menuItems}/>
       </section>
     </main>
   );
